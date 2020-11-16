@@ -15,7 +15,7 @@ SECRET_KEY = '@x&yf*1s3tacz+z#(#94o#l8c6tjze3b51+i9-3gso&@8ktzk)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -66,9 +66,18 @@ WSGI_APPLICATION = 'food_stories.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'food_stories',
+        'USER': 'root',
+        'PASSWORD': '12345',
+        'PORT': 3306,
+        'HOST': '0.0.0.0', 
     }
 }
 
